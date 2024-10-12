@@ -1,0 +1,89 @@
+@charset "utf-8";
+
+body {
+    font-family: 'HG丸ゴシックM-PRO' !important;
+}
+
+div {
+    font-family: 'HG丸ゴシックM-PRO' !important;
+}
+
+p {
+    font-family: 'HG丸ゴシックM-PRO' !important;
+}
+
+.btn {
+    font-family: 'HG丸ゴシックM-PRO' !important;
+}
+
+img {
+    width: 200px;
+    height: auto;
+}
+
+.auth {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.must {
+    color: #ff0000;
+    font-size: 15;
+}
+
+table {
+    text-align: center;
+}
+
+.suturday {
+    background-color: #d3d3d3;
+    color: #0000ff;
+}
+
+.sunday {
+    background-color: #d3d3d3;
+    color: #ff0000;
+}
+
+.tomonth {
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.table_lines {
+    border: 0.5px #000000 solid;
+}
+
+.title {
+    background-color: #89ff89;
+}
+
+.info {
+    font-style: italic;
+}
+
+.create {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- メディアクエリでデバイスごとのスタイル変更 --- */
+
+/* スマートフォン用 (幅が768px未満) */
+@media screen and (max-width: 767px) {
+    body {
+        font-size: 15px; /* スマホではフォントサイズを小さくする */
+    }
+
+    .btn-primary {
+        font-size: 20px; /* ボタンのフォントサイズを縮小 */
+    }
+}
+
+.empty {
+    display: flex;
+    justify-content: center;
+    color: #ff0000;
+    font-weight: bold;
+}
