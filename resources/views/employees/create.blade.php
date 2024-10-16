@@ -70,7 +70,7 @@
                             </span>
                         </div>
 
-                        <button type="submit" class="btn btn-primary mt-3">登録を続ける　</button>
+                        <button type="submit" class="btn btn-warning mt-3">登録を続ける　</button>
                         <button type="button" class="btn btn-neutral mt-3" onclick="window.location='{{ route('dashboard') }}'">戻る　</button>
                     </form>
                 </div>

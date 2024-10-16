@@ -8,6 +8,8 @@ use App\Models\Worktime;
 use Illuminate\Http\Request;
 use illuminate\Support\Facades\Auth;
 
+use Carbon\Carbon;
+
 
 class WorktimeController extends Controller
 {
@@ -159,5 +161,42 @@ class WorktimeController extends Controller
         }
 
         return view('dashboard');
+    }
+
+    public function scan(Request $request)
+    {
+        $employeeId = $request->input('employee_id');
+        $employee = Employee::findOrFail($employeeId);
+
+        if (!$employee) {
+            return redirect()->back()->with('error', 'この従業員IDは存在しません。');
+        }
+
+        //今日の勤務時間を取得
+        $today = Carbon::now()->toDateString();
+        $worktime = Worktime::where('employee_id', $employeeId)
+            ->whereDate('date', $today)
+            ->first();
+
+        $currentTime = Carbon::now();
+
+        if (!$worktime) {
+            //出勤打刻を新規作成
+            $worktime = new Worktime;
+            $worktime->employee_id = $employee->id;
+            $worktime->date = $today;
+            $worktime->start_date = $currentTime;
+            $worktime->save();
+        } else {
+            //退勤打刻を更新
+            if (is_null($worktime->end_date)) {
+                $worktime->end_date = $currentTime;
+                $worktime->save();
+            } else {
+                return redirect()->back()->with('error', 'すでに退勤打刻が登録されています。');
+            }
+        }
+
+        return redirect()->back()->with('success', '勤務時間が登録されました。');
     }
 }

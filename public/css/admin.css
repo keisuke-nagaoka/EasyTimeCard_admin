@@ -52,7 +52,8 @@ table {
 }
 
 .table_lines {
-    border: 0.5px #000000 solid;
+    border: 0.5px #c0c0c0 solid;
+    background-color: rgba(255, 215, 224, 0.3);
 }
 
 .title {
@@ -64,6 +65,15 @@ table {
 }
 
 .create {
+    display: flex;
+    justify-content: center;
+}
+
+.employee {
+    font-size: 20px;
+}
+
+.scan {
     display: flex;
     justify-content: center;
 }

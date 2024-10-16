@@ -143,5 +143,7 @@
     "Employee_Show": "従業員情報",
     "Employee_Edit": "従業員情報の編集",
     "Worktime_Register": "従業員登録",
-    "Worktime_Edit": "勤怠の編集"
+    "Worktime_Edit": "勤怠の編集",
+    "Worktime_Camera": "勤怠撮影",
+    "Worktime_Scan": "QRコード読み込み"
 }

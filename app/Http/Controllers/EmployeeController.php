@@ -184,4 +184,29 @@ class EmployeeController extends Controller
 
         return view('dashboard');
     }
+
+
+    public function handleQr(Request $request)
+    {
+        //読み取ったQRから従業員のIDを取得
+        $employeeId = $request->query('id');
+
+        //従業員が存在するか確認
+        $employee = Employee::find($employeeId);
+
+        //従業員が存在しない場合
+        if (!$employee) {
+            return redirect()->back()->with('error', '従業員が見つかりません。');
+        }
+
+        //勤務時間の記録にリダイレクトさせる
+        return redirect()->route('worktimes.scan', ['id' => $employeeId]);
+    }
+
+
+    public function showScanForm()
+    {
+        //QRコードスキャンページの表示
+        return view('worktimes.scan');
+    }
 }

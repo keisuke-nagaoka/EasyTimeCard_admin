@@ -21,9 +21,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+
+//QRコードスキャンページのルーティング
+Route::get('/worktime/scan/form', [EmployeeController::class, 'showScanForm'])->name('worktimes.scan.form');
+//従業員IDのQRコードをスキャンするルーティング
+Route::post('/worktime/scan', [WorktimeController::class, 'scan'])->name('worktimes.scan.post');
+
 
 Route::get('/dashboard', [EmployeeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 

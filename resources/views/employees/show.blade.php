@@ -10,15 +10,19 @@
             <button type="button" class="btn btn-neutral mt-3" onclick="window.location='{{ route('dashboard') }}'">戻る　</button>
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <table class="w-full">
+                    <table class="employee w-full">
                         <thead>
                             <tr>
+                                <th>従業員ID</th>
                                 <th>氏名</th>
+                                <th>メールアドレス</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>{{ $employee->id }}</td>
                                 <td>{{ $employee->name }}</td>
+                                <td>{{ $employee->email }}</td>
                             </tr>
                         </tbody>
                     </table>

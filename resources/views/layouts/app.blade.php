@@ -8,14 +8,12 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        <!-- 目アイコンの取得 -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('/css/admin.css') }}">
 
         <title>EasyTimeCard_Admin</title>
-
-        <!-- Fonts -->
-        {{-- <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" /> --}}
 
     </head>
     <body class="antialiased">
